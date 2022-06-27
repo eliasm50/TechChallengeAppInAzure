@@ -1,10 +1,10 @@
 # Project To-Do App Technical Challenge
 
-This repo contains a sample showcasing a basic implementation for the DevOps Tech challenge using the Azure Cloud services. 
+This repo contains a sample showcasing a basic implementation for a DevOps Tech challenge using the Azure Cloud services. 
 The implementation contains patterns and best practice where possible to illustrate concepts and ideas but there are shortcuts and simplifications. This repository should not be taken as production quality but can serve as a scaffold for future work.
 If you want to read more about the challenge see [here](./doc/servian.md).
 
-The sample showscases:
+The sample showcases:
 
 - infrastructre deployment using Terraform
 - secret management using Keyvault and Keyvault integration with app service
@@ -67,5 +67,8 @@ There is a cicd deployment pipeline that would build the docker image and tag it
 - Remove admin user for connection string, but needed for seeding
 - API Traffic could be restricted from public access if required
 - Keyvault could be put inside the vnet (keyvault integration with app service would stop working as current azure limitation)
-- Could add Traffic management resource for improved traffic management. Currently using App service built in load balancer to handle horizontal scaling.
+- Could add Traffic management resource for improved traffic management. Currently uses App Services built-in load balancer to handle horizontal scaling.
 - Use of deployment slot for a blue/green type deployment
+- Use Azure Container Registry so the registry lives within our private network
+- Api gateway to decouple and abstract our api, for better scalability and security adding WAF capabilities, standard auth, etc
+- Static content should be cached in a CDN, closer to the client for improved performance and security
